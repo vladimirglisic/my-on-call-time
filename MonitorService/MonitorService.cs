@@ -1,4 +1,4 @@
-﻿using OnCallContract.Interfaces;
+﻿using HrServiceContract.Interfaces;
 
 namespace MonitorService
 {
