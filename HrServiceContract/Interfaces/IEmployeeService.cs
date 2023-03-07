@@ -1,7 +1,6 @@
-﻿using OnCallContract.Model;
-using System;
+﻿using HrServiceContract.Model;
 
-namespace OnCallContract.Interfaces
+namespace HrServiceContract.Interfaces
 {
     public interface IEmployeeService
     {
@@ -17,6 +16,6 @@ namespace OnCallContract.Interfaces
         /// </summary>
         /// <param name="employeeId"></param>
         /// <returns>Open incident</returns>
-        DateTime GetOpenIncident(int employeeId);
+        Incident GetOpenIncident(int employeeId);
     }
 }

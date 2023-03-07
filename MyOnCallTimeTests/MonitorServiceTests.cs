@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace OnCallTests
+namespace MyOnCallTimeTests
 {
     public class MonitorServiceTests
     {

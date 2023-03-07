@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OnCallContract.Model
+namespace HrServiceContract.Model
 {
     public class Incident
     {

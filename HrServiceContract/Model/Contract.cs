@@ -1,4 +1,4 @@
-﻿namespace OnCallContract.Model
+﻿namespace HrServiceContract.Model
 {
     public class Contract
     {

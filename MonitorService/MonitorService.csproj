@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OnCallContract\OnCallContract.csproj" />
+    <ProjectReference Include="..\HrServiceContract\HrServiceContract.csproj" />
   </ItemGroup>
 
 </Project>
