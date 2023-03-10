@@ -31,7 +31,7 @@ namespace MyOnCallTimeTests
             var monitor = new MonitorService.MonitorService(m_mockEmployeeService.Object, currentTime);
 
             // execute
-            decimal result = monitor.GetOpenSessionEarnings(1);
+            decimal result = monitor.GetOpenSessionEarnings(It.IsAny<int>());
 
             // assert
             Assert.That(result, Is.EqualTo(amount));
@@ -42,11 +42,11 @@ namespace MyOnCallTimeTests
         {
             // prepare
             m_mockEmployeeService.Setup(x => x.GetContract(It.IsAny<int>())).Throws(new WebException());
-            var monitor = new MonitorService.MonitorService(m_mockEmployeeService.Object, new DateTime());
+            var monitor = new MonitorService.MonitorService(m_mockEmployeeService.Object, It.IsAny<DateTime>());
 
             // execute & assert
             Assert.Throws<ApplicationException>(() =>
-                monitor.GetOpenSessionEarnings(1)
+                monitor.GetOpenSessionEarnings(It.IsAny<int>())
             );
         }
     }
