@@ -19,6 +19,7 @@ namespace MyOnCallTimeTests
         {
             m_mockEmployeeService = new Mock<IEmployeeService>();
             m_mockEmployeeService.Setup(x => x.GetContract(It.IsAny<int>())).Returns(new Contract { HourlyWage = HourlyWages });
+            m_mockEmployeeService.Setup(x => x.GetOpenIncident(It.IsAny<int>())).Returns(new Incident { StartTime = StartDate });
         }
 
         [TestCase("2023-01-01 9:30:00", 50)]
@@ -27,7 +28,6 @@ namespace MyOnCallTimeTests
         public void GetOpenSessionEarnings_General_General(DateTime currentTime, decimal amount)
         {
             // prepare
-            m_mockEmployeeService.Setup(x => x.GetOpenIncident(It.IsAny<int>())).Returns(new Incident { StartTime = StartDate });
             var monitor = new MonitorService.MonitorService(m_mockEmployeeService.Object, currentTime);
 
             // execute

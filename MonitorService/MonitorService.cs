@@ -23,7 +23,8 @@ namespace MonitorService
                 if (session.StartTime > m_CurrentTime) return 0;
                 decimal amount = (decimal)(m_CurrentTime - session.StartTime).TotalMinutes / 60m * contract.HourlyWage;
                 return amount;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new ApplicationException("An error occured.", ex);
             }
