@@ -8,7 +8,7 @@ namespace MonitorService
         private IEmployeeService m_EmployeeService;
         private DateTime m_CurrentTime;
 
-        public MonitorService(IEmployeeService employeeService, DateTime currentTime)
+        public EarningsMonitorService(IEmployeeService employeeService, DateTime currentTime)
         {
             m_EmployeeService = employeeService;
             m_CurrentTime = currentTime;

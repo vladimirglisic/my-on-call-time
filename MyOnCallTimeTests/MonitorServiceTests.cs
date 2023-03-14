@@ -1,5 +1,6 @@
 using HrServiceContract.Interfaces;
 using HrServiceContract.Model;
+using MonitorService;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -28,7 +29,7 @@ namespace MyOnCallTimeTests
         public void GetOpenSessionEarnings_General_General(DateTime currentTime, decimal amount)
         {
             // prepare
-            var monitor = new MonitorService.MonitorService(m_mockEmployeeService.Object, currentTime);
+            var monitor = new EarningsMonitorService(m_mockEmployeeService.Object, currentTime);
 
             // execute
             decimal result = monitor.GetOpenSessionEarnings(It.IsAny<int>());
@@ -42,7 +43,7 @@ namespace MyOnCallTimeTests
         {
             // prepare
             m_mockEmployeeService.Setup(x => x.GetContract(It.IsAny<int>())).Throws(new WebException());
-            var monitor = new MonitorService.MonitorService(m_mockEmployeeService.Object, It.IsAny<DateTime>());
+            var monitor = new EarningsMonitorService(m_mockEmployeeService.Object, It.IsAny<DateTime>());
 
             // execute & assert
             Assert.Throws<ApplicationException>(() =>
