@@ -1,6 +1,6 @@
 ﻿namespace MonitorService
 {
-    interface IMonitorService
+    interface IEarningsMonitorService
     {
         /// <summary>
         /// Calculates real-time earnings of the open on-call incident session for the employee.

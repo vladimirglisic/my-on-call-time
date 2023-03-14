@@ -2,7 +2,7 @@
 
 namespace MonitorService
 {
-    public class MonitorService : IMonitorService
+    public class EarningsMonitorService : IEarningsMonitorService
     {
         private IEmployeeService m_EmployeeService;
 
